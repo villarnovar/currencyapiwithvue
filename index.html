@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Interest Calculator</title>
+    <link rel = "stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <p id="header">SIMPLE INTEREST CALCULATOR</p>
+    <h5>Equation:A = P(1 + rt)</h5>
+    
+    <div id="root">
+        <label>PRINCIPAL:</label><br>
+        <input v-model="principal" @keyup="calculate" type="number" ></input>
+    
+        <br>
+        <label>RATE%:</label><br>
+        <input v-model= "rate"  @keyup="calculate" type="number"></input>
+        <br>
+  
+   
+        <label> TIME: </label><br>
+        <input v-model="time" @keyup="calculate" type="number"></input>
+        <br>
+
+
+
+        <p id="result" >Your simple interest = {{ interest }}
+            
+        </p>
+</div>
+
+
+    
+</body>
+<script src="app.js"></script>
+</html>
