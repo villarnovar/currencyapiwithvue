@@ -1,17 +1,18 @@
 new Vue({
-    el: "#root",
-    data:{
-        principal: " ",
-        rate: " ",
-        time: " ", 
-        interest: " "
-    },
-
-    methods: {
-        calculate: function(){
-            this.interest = (this.principal * this.rate * this.time) / 100;
-            this.interest = this.interest.toFixed(2)
-
+    el: '#root',
+    data(){
+        return{
+            rates: {},
+            base: null
         }
+    },
+    created (){
+        axios.get("https://api.exchangeratesapi.io/latest")
+        .then((response) =>{
+            this.rates =response.data.rates
+            this.base = response.data
+            console.log(this.rates)
+        })
     }
+
 });
